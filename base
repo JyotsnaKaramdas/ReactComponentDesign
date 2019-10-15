@@ -1,0 +1,61 @@
+import React from 'react';
+import './App.css';
+
+//let postImage = 'https://bit.ly/2OpuL2i';
+//let postContent= ['Swimming is fun', 'Swimming is exhuasting'];
+//let postImages=[]
+let posts= [
+  {
+  content: 'Chilling at the lake',
+  image: 'https://bit.ly/2MoswcW',
+  likes: 8,
+},
+{
+  content: 'Chilling at the lake',
+  image: 'https://bit.ly/2MoswcW',
+  likes: 8,
+}
+]
+
+
+function App() {
+  return (
+    <div>
+      <Profile content={posts[0].content} postImage= {posts[0].image} />
+      <Profile content={posts[1]. content}  postImage= {posts[1].image} />
+
+     
+    </div>
+ 
+    
+  );
+}
+
+
+//let's make a new compenent called Profile that will
+//contain our cards
+
+function Profile(props) {
+  return(
+    <div className="profileCard">
+        <div className="profileImage" />
+        <div className="profileHeader">
+          <div>
+          <h1>Sam</h1>
+            <p>Columbia River, OR</p>
+          </div>
+          <div className="likes">
+            <h3>100 likes</h3>
+          </div>
+
+        </div>
+        <div className="profileDescription">
+          <img src={props.postImage} alt="a lake" />
+          <p>{props.content}</p>
+        </div>        
+      </div>
+
+  )
+
+}
+export default App;
